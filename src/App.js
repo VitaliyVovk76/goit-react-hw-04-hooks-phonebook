@@ -1,10 +1,11 @@
+import { useState, useEffect } from "react";
+
 import "./App.css";
 import Container from "./components/Container/Container";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactsList/ContactsList";
 import Filter from "./components/Filter/Filter";
 import s from "./App.module.css";
-import { useState, useEffect } from "react";
 
 function App() {
   const [contacts, setContacts] = useState(() => {
@@ -25,7 +26,6 @@ function App() {
   //записывает значение contacts в localStorage
   useEffect(() => {
     window.localStorage.setItem("contacts", JSON.stringify(contacts));
-    console.log(contacts);
   }, [contacts]);
 
   //записывает в filter значение из формы фильтра
